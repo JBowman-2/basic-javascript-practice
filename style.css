@@ -1,3 +1,21 @@
 h1 {
-    color: orange;
+    color: red;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+    color: white;
+    padding: .5rem;
+}
+
+div {
+    border: black solid 3px;
+    background-color: black;
+}
+
+main {
+    display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  grid-gap: 2rem;
 }

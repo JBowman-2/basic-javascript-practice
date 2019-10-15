@@ -1,28 +1,47 @@
+import { films } from '/assets/films.js'
+import { people } from '/assets/people.js'
+
 console.log('this is Javascript on the page')
 
-let mainHeader = document.querySelector("h1")
+let mainArea = document.querySelector('main')
 
-console.log(mainHeader)
+films.forEach(function(film) {
+    let filmDiv = document.createElement('div')
+    let title = document.createElement('h1')
+    let crawl = document.createElement('p')
 
-mainHeader.textContent = 'josh'
-mainHeader.setAttribute("style", "color:red; border: 1px solid blue;");
+    filmDiv.appendChild(title)
+    filmDiv.appendChild(crawl)
+
+    title.textContent = film.title
+    crawl.innerText = film.opening_crawl // using innerText it will keep all of the embeded formating - return and newline elelemts. 
+
+    mainArea.appendChild(filmDiv)
+  });
+
+  people.forEach(function(person) {
+      let personDiv = document.createElement('div')
+      let name = document.createElement('h1')
+      let gender = document.createElement('h3')
+      let pic = document
+
+      personDiv.appendChild(name)
+      personDiv.appendChild(gender)
+
+      name.textContent = person.name
+      gender.textContent = person.gender
+      mainArea.appendChild(personDiv)
 
 
-document.body.setAttribute("style", "background-color: green;");
+  });
 
-let myParagraph = document.createElement('p')
-myParagraph.textContent = 'i am a giagantic paragraph'
+const maleCharacters = people.filter(person => person.gender === 'male')
+console.log(maleCharacters)
 
-let myDiv = document.createElement('div')
-myDiv.appendChild(myParagraph)
+const femaleCharacters = people.filter(person => person.gender === 'female')
+console.log(femaleCharacters)
 
-console.log(myDiv.textContent)
-//myDiv.textContent = 'this is a div'
 
-document.body.appendChild(myDiv)
 
-let myPic = document.createElement('img')
 
-myPic.setAttribute("src", 'https://upload.wikimedia.org/wikipedia/commons/d/d8/Friedrich-Johann-Justin-Bertuch_Mythical-Creature-Dragon_1806.jpg')
 
-document.body.appendChild(myPic)
