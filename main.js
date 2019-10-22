@@ -33,6 +33,7 @@ films.forEach(function(film) {
       mainArea.appendChild(personDiv)
 
 
+
   });
 
 const maleCharacters = people.filter(person => person.gender === 'male')
